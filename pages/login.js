@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
 import { useState } from "react";
 import { Card, Button, Container, Form, Row, Col } from "react-bootstrap";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [error, setError] = useState(null)
@@ -38,9 +38,6 @@ export default function Home() {
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" placeholder="Enter email"  />
-                <Form.Text className="text-muted" >
-                  We'll never share your email with anyone else.
-                </Form.Text>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -53,6 +50,7 @@ export default function Home() {
               <Button variant="primary" onClick={login}>
                 Submit
               </Button>
+              sujal
             </Form>
           </Card.Body>
         </Card>

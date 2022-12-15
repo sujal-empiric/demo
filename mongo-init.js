@@ -1,0 +1,1 @@
+db.demo.insert({"name":"Test User", "email":"test@user.com", "password":"123456"})

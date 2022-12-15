@@ -1,0 +1,32 @@
+version: "2"
+services:
+  client:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    volumes:
+      - ./client:/client
+      - /client/node_modules
+    depends_on:
+      - db
+    networks:
+      - webappnetwork
+  db:
+    image: mongo
+    restart: always
+    container_name: mongo_client
+    ports:
+      - 27017:27017
+    expose:
+      - 21017
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    command: mongod --noauth 
+    networks:
+      - webappnetwork
+networks:
+  webappnetwork:
+    driver: bridge

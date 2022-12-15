@@ -2,7 +2,7 @@
 import database from "../../../components/database";
 export default async function handler(req, res) {
   const result = await database(async (client, db) => {
-    const res = await db.collection("users").find().toArray();
+    const res = await db.collection("demo").find().toArray();
     await client.close()
     return res; 
   });

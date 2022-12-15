@@ -2,12 +2,20 @@
 
 ### Getting started
 
-1. install all the dependancies with `npm install`
-2. create a database in mongodb and import the `users.json` file collection
-   this file containes all the dummy users data
-3. now change the database files from `components > database.js`. update the mongourl and database name
-4. run the server using `npm run dev`
-5. login with one of the accounts in the `users.json` file
-6. you'll be redirected to the Dashboard and you can see the big 'Connect Metamask' button
-7. when you click the button it'll ask you to connect the metamask with the website
-8. you accept the connection request and your account address will be stored in the database which you can see from the MongoDB Compass
+1. Run `sudo docker-compose up --force-recreate` command 
+   - this command will pull the MongoDB image and build the Demo Image and run it 
+
+   - Demo website will run on localhost:3000 and 
+MongoDB will run on localhost:27017
+
+2. open the website in chrome and login with the following dummy email and pass
+   - email: test@user.com 
+   - password: 123456
+
+now you can use MongoDB compass to connect with the Database and look the collection data
+
+after login you'll be redirected to the dashboard
+
+here you can connect with Metamask using Connect Metamask Button
+
+once you connect you can check the database and there will be a key 'wallet' with the public address

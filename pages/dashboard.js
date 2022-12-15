@@ -1,15 +1,15 @@
-import { useRouter } from 'next/router';
 import React, { useEffect } from 'react'
+import { useRouter } from 'next/router';
 
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-function dashboard() {
+function Dashboard() {
     const router = useRouter()
     console.log(router)
     useEffect(() => {
       if(!router.query.email){
         router.push('/login')
       }
-    }, [])
+    }, [router])
     
     const connectMetamask = async ()=>{
         console.log("Connecting metamask")
@@ -46,4 +46,4 @@ function dashboard() {
   )
 }
 
-export default dashboard
+export default Dashboard
